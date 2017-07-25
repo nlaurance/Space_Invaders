@@ -409,7 +409,8 @@ class SpaceInvaders(object):
 
     def make_enemies_shoot(self):
         columnList = list({enemy.column for enemy in self.enemies})
-        column = shuffle(columnList)[0]
+        shuffle(columnList)
+        column = columnList[0]
         rowList = [enemy.row for enemy in self.enemies
                    if enemy.column == column]
         row = max(rowList)
